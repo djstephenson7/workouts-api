@@ -1,15 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const db = mongoose.connection;
+const config = require('config');
+
 const app = express();
+
 
 app.get('/', (req, res) => {
   res.send('App up and running.');
 });
 
-mongoose.connect('mongodb://localhost/workoutapi', {useNewUrlParser: true});
+require('./app/startup/db')(mongoose);
 
-db.on('error', console.error.bind(console, 'Connection error'));
-db.once('open', () => console.log('Connecting to db...'));
+console.log(`Application name: ${config.get('name')}`);
 
-app.listen(3000, () => console.log('Listening on port 3000...'));
+app.listen(3000, () => console.log(`Connected to ${config.get('mail.host')} on port 3000...`));

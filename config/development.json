@@ -1,0 +1,7 @@
+{
+  "name":"Workout API - Development",
+  "mail": {
+    "host":"dev-server"
+  },
+  "db":"mongodb://localhost/workoutapi"
+}

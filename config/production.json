@@ -1,0 +1,6 @@
+{
+  "name":"Workout API - Production",
+  "mail": {
+    "host":"prod-server"
+  }
+}
