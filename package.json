@@ -9,7 +9,8 @@
     "joi": "^14.3.1",
     "mongodb": "^3.2.6",
     "mongoose": "^5.5.11",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "supertest": "^4.0.2"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
@@ -19,7 +20,7 @@
   },
   "scripts": {
     "start": "nodemon",
-    "test": "jest"
+    "test": "jest --detectOpenHandles"
   },
   "repository": {
     "type": "git",

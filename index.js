@@ -13,4 +13,7 @@ require('./app/startup/db')(mongoose);
 
 console.log(`Application name: ${config.get('name')}`);
 
-app.listen(3000, () => console.log(`Connected to ${config.get('mail.host')} on port 3000...`));
+const port = process.env.PORT || 3000;
+const server = app.listen(port, () => console.log(`Connected to ${config.get('mail.host')} on port 3000...`));
+
+module.exports = server;
