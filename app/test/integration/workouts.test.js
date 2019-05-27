@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
 
-
 describe('/api/workouts', () => {
   let server;
 
   describe('GET /', () => {
-    beforeEach(() => { server = require('../../../index.js'); });
+    beforeEach(() => {
+      process.env.NODE_ENV = 'test',
+      server = require('../../../index.js');
+    });
 
     afterEach(async () => {
       await server.close();
